@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <%- include("./partials/head")%>
+</head> <a href=""></a>
+
+<body>
+    <%- include("./partials/header")%>
+        <article>
+            <h1 class="titleRegister">Formulario de registro</h1>
+            <div class="formContainer">
+                <form action="/users/register" enctype="multipart/form-data" method="POST">
+                    <div class="form-group">
+                        <label for="fullName">Nombre completo</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Franco Marchegiani" class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' :
+                        null %>" value="<%=locals.oldData ? oldData.fullName : null %>">
+                        <% if (locals.errors && errors.fullName) { %>
+                            <div class="textError">
+                                <p>
+                                    <%= errors.fullName.msg %>
+                                </p>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="form-group">
+                        <label for="userName">Nombre de usuario</label>
+                        <input type="text" id="userName" name="userName" placeholder="Ziggy Stardust" class="form-control <%= locals.errors && errors.userName ? 'is-invalid' :
+                            null %>" value="<%= locals.oldData ? oldData.userName : null %>">
+                        <% if (locals.errors && errors.userName) { %>
+                            <div class="textError">
+                                <p>
+                                    <%= errors.userName.msg %>
+                                </p>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="text" id=" email" name="email" aria-describedby="emailHelp"
+                            placeholder="franco@gmail.com" class="form-control <%= locals.errors && errors.email ? 'is-invalid' :
+                        null %>" value="<%=locals.oldData ? oldData.email : null %>">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email
+                            with
+                            anyone
+                            else.</small>
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="textError">
+                                <p>
+                                    <%= errors.email.msg %>
+                                </p>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id=" password" name="password" class="form-control <%= locals.errors && errors.password ? 'is-invalid' :
+                        null %>">
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="textError">
+                                <p>
+                                    <%= errors.password.msg %>
+                                </p>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">País de nacimiento</label>
+                        <select id=" country" name="country"
+                            class="form-control <%= locals.errors && errors.country ? 'is-invalid' : null %>" value="
+                            <%=locals.oldData ? oldData.country : null %>">
+                            <option value="<%= locals.oldData ? oldData.country : null%>">Seleccione un pais
+                            </option>
+                            <% let countries=["Argentina", "Bolivia" , "Brasil" , "Colombia" , "Chile" , "Ecuador"
+                                , "Paraguay" , "Perú" , "Venezuela" , "Uruguay" ]; %>
+                                <% for (let country of countries){%>
+                                    <option value="<%=country%>" <%=locals.oldData && (country==oldData.country)
+                                        ? 'selected' : null %>>
+                                        <%=country%>
+                                    </option>
+                                    <% } %>
+                        </select>
+                        <% if (locals.errors && errors.country) { %>
+                            <div class="textError">
+                                <p>
+                                    <%= errors.country.msg %>
+                                </p>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="imageProfile">Imagen de perfil</label>
+                        <input type="file"
+                            class="custom-file-input <%= locals.errors && errors.imageProfile ? 'is-invalid' : null %>"
+                            id="imageProfile" name="imageProfile" lang="es">
+                        <% if (locals.errors && errors.imageProfile) { %>
+                            <div class="textError">
+                                <p>
+                                    <%= errors.imageProfile.msg %>
+                                </p>
+                            </div>
+                            <% } %>
+                    </div>
+                    <button type="submit" class="btn btn-primary btnRegister">Registrarse</button>
+                </form>
+            </div>
+        </article>
+
+        <%- include("./partials/footer")%>
+</body>
+
+</html>
