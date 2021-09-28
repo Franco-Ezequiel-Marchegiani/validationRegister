@@ -1,12 +1,16 @@
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const express = require("express");
+const session = require("express-session");
+const cookies = require("cookie-parser");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 
-var app = express();
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+
+const app = express();
+const userNavLoggedMiddleware = require("./middlewares/userNavLoggedMiddleware");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -14,10 +18,19 @@ app.set("view engine", "ejs");
 
 app.use(logger("dev"));
 app.use(express.json());
+app.use(
+  session({
+    secret: "Eh' top secret viteh",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(cookies());
+app.use(userNavLoggedMiddleware);
 /* Importante para tener la información de req.body */
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "./public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
@@ -26,7 +39,6 @@ app.use("/users", usersRouter);
 app.use(function (req, res, next) {
   next(createError(404));
 });
-
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development

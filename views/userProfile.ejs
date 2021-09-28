@@ -10,8 +10,17 @@
 
 <body>
     <%- include("./partials/header")%>
-        <h1>Hello World User Profile</h1>
+        <h1 class="titleWelcomeUserProfile">Hello <%= userData.fullName %>
+        </h1>
 
+        <main class="userProfileContainer">
+            <div class="imageProfileUser">
+                <img src="../images/avatars/<%= userData.imageProfile %>" alt="">
+            </div>
+            <div class="alert alert-info userEmailContainer" role="alert">
+                <%= userData.email %>
+            </div>
+        </main>
         <%- include("./partials/footer")%>
 </body>
 

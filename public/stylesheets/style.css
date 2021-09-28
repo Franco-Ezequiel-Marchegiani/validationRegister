@@ -37,6 +37,17 @@ form label {
   padding-top: 8px;
 }
 /* End Register */
+/* Login */
+.titleRegister {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.formLogin {
+  max-width: 50%;
+  margin: auto;
+}
+
+/* End Login */
 /* Msg aprobation */
 .msgAprobation {
   text-align: center;
@@ -45,6 +56,29 @@ form label {
   margin: auto;
 }
 /* End Msg msgAprobation */
+
+/* User Profile */
+.titleWelcomeUserProfile {
+  text-align: center;
+}
+.imageProfileUser {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+.userEmailContainer {
+  max-width: 25%;
+  margin: auto;
+}
+.imageAvatarNavbar {
+  width: 50px;
+  display: inline;
+  border-radius: 50%;
+}
+/* EndUser Profile */
 a {
+  color: #00b7ff;
+}
+.nav-link {
   color: #00b7ff;
 }

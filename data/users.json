@@ -1,0 +1,62 @@
+[
+ {
+  "id": 1,
+  "fullName": "Franco",
+  "userName": "Ziggy",
+  "email": "franco@gmail.com",
+  "password": "afuqworiqjwfoasfma",
+  "country": "Bolivia",
+  "imageProfile": "ziggyStardust.png"
+ },
+ {
+  "id": 2,
+  "fullName": "Roberto",
+  "userName": "El chiki",
+  "email": "chikito123@gmail.com",
+  "password": "124ijasdffoq!",
+  "country": "Chile",
+  "imageProfile": "ziggyStardust.png"
+ },
+ {
+  "id": 3,
+  "fullName": "Alan",
+  "userName": "IsaacNetwon",
+  "email": "alan88@gmail.com",
+  "password": "afuzbasfg2w3",
+  "country": "Venezuela",
+  "imageProfile": "ziggyStardust.png"
+ },
+ {
+  "id": 4,
+  "fullName": "Robert",
+  "userName": "The Rock",
+  "email": "rocky99@gmail.com",
+  "password": "afuqworiqjwfoabbcbfa",
+  "country": "Brasil",
+  "imageProfile": "ziggyStardust.png"
+ },
+ {
+  "id": 5,
+  "fullName": "Lucía",
+  "userName": "Lulu",
+  "email": "luciaGutierrez@gmail.com",
+  "password": "asfqwo911nvov8155foasfma",
+  "country": "Argentina",
+  "imageProfile": "ziggyStardust.png"
+ },
+ {
+  "id": 6,
+  "fullName": "Pedro",
+  "email": "pedritoVM@gmail.com",
+  "country": "Boliviano"
+ },
+ {
+  "id": 7,
+  "fullName": "Peje Marchegiani",
+  "userName": "1",
+  "email": "eze.cavs@hotmail.com",
+  "password": "$2a$10$oLLGea73W0M29iUvpJZ.UeMl/xIIWqiIbUrxT9WB6PDvm3CdtfGya",
+  "country": "Argentina",
+  "imageProfile": "1632843023176_img.png"
+ }
+]
